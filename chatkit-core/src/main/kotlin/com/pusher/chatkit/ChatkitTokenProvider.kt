@@ -53,7 +53,7 @@ data class ChatkitTokenProvider
                         .build()
                 val response = client.newCall(request).execute()
 
-                if (response.isSuccessful && response.code() in 200..299) {
+                if (response.isSuccessful) {
                     parseTokenResponse(response)
                 } else {
                     response.asError().asFailure()
